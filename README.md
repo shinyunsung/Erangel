@@ -2,7 +2,16 @@
 enjoyin 프로젝트의 Front-end
 
 ---
-## 프로젝트 구조
+### 기술스택
+- JavaScript
+- React
+- Redux/react-redux
+- React-Router
+- Styled-Components
+- CRA
+
+---
+### 프로젝트 구조
 - src
   - assets
   - components
@@ -16,14 +25,6 @@ enjoyin 프로젝트의 Front-end
     - hooks
   - styles
 
----
-## 기술스택
-- JavaScript
-- React
-- Redux/react-redux
-- React-Router
-- Styled-Components
-- CRA
 
 
 
