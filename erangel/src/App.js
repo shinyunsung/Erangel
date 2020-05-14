@@ -1,12 +1,19 @@
 import React from 'react';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Main from '../src/containers/Main';
+import SignIn from '../src/containers/SignIn';
+import SignUp from '../src/containers/SignUp';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      
+    <div>
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/login" exact component={SignIn} />
+        <Route path="/signup" exact component={SignUp} />
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
