@@ -1,0 +1,53 @@
+.header {
+  width: 100vw;
+  height: 5.6vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.headerWrapper {
+  /* margin: 0 auto;
+    height: 94.4vh; */
+  width: 1040px;
+  background-color: white;
+}
+
+.headerLogo {
+  font-family: Damion-Regular;
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fab514;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+  font-family: NanumSquare;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #a0a0a0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+li {
+  display: flex;
+  padding-left: 60px;
+}
