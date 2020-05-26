@@ -7,102 +7,25 @@ body {
   background-color: #f2f2f2;
 }
 
-.mainLogo {
-  margin-bottom: 80px;
-  font-family: Damion-Regular;
-  font-size: 60px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #fab514;
-
-  /* text-align: center; */
-}
-
-/* @font-face {
-  font-family: Damion-Regular;
-  src: url(".../assets/fonts/Damion-Regular.ttf");
-}
-@font-face {
-  font-family: NanumSquareEB;
-  src: url(".../assets/fonts/NanumSquareEB.ttf");
-}
-@font-face {
-  font-family: NanumSquareL;
-  src: url(".../assets/fonts/NanumSquareL.ttf");
-}
-@font-face {
-  font-family: NanumSquareR;
-  src: url(".../assets/fonts/NanumSquareR.ttf");
-} */
-
-input[type="text"],
-input[type="password"] {
-  margin: 0 auto;
-  display: block;
-  outline: none;
-  box-sizing: border-box;
-  padding-left: 30px;
-  margin-bottom: 40px;
-  width: 460px;
-  height: 50px;
-  border-radius: 5px;
-  border: solid 1px #707070;
-  background-color: #ffffff;
-}
-
-input::placeholder {
-  font-family: NanumSquareR;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #a0a0a0;
-}
-
-label {
-  font-family: NanumSquareL;
-  font-size: 17px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #000000;
-  text-align: left !important;
-}
-
-button {
-  width: 460px;
-  height: 60px;
-  border-radius: 5px;
-  border: none;
-  background-color: #fab514;
-
-  font-family: NanumSquareL;
-  font-size: 17px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #ffffff;
-
-  cursor: pointer;
-}
-
-.wrapper {
-  margin: 0 auto;
-  height: 94.4vh;
-  width: 1040px;
-  background-color: white;
-
+.center {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+}
+
+@font-face {
+  font-family: Damion-Regular;
+  src: url("../../assets/fonts/Damion-Regular.ttf");
+}
+@font-face {
+  font-family: NanumSquareEB;
+  src: url("../../assets/fonts/NanumSquareEB.ttf");
+}
+@font-face {
+  font-family: NanumSquareL;
+  src: url("../../assets/fonts/NanumSquareL.ttf");
+}
+@font-face {
+  font-family: NanumSquareR;
+  src: url("../../assets/fonts/NanumSquareR.ttf");
 }

@@ -1,0 +1,44 @@
+.header {
+  width: 100vw;
+  height: 5.6vh;
+  background-color: #ffffff;
+}
+
+.headerWrapper {
+  margin: 0 auto;
+  width: 1040px;
+  height: 5.6vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo {
+  margin-top: 5px;
+  height: 25px;
+}
+
+a {
+  text-decoration: none;
+  font-family: NanumSquare;
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+li {
+  display: flex;
+  padding-left: 60px;
+}
+
+.halfWidth {
+  width: 50%;
+}
