@@ -2,9 +2,7 @@ import React from "react";
 import { Component } from "react";
 import "./loginContainer.css";
 import HeaderBox from "../../conponents/HeaderBox/headerBox";
-import InputBox from "../../conponents/SignIn/InputBox";
-import ErrorMessage from "../../conponents/SignIn/ErrorMessage";
-import Button from "../../conponents/SignIn/Button";
+import LoginForm from "../../conponents/SignIn/LoginForm.jsx";
 import MainLogo from "../../conponents/SignIn/MainLogo";
 import styled from "styled-components";
 
@@ -69,9 +67,11 @@ class loginContainer extends Component {
         <Wrapper>
           <div>
             <MainLogo></MainLogo>
-            <InputBox data={this.state.inputList}></InputBox>
-            <ErrorMessage data={this.state.errMessageList[2]}></ErrorMessage>
-            <Button text={this.state.buttonText}></Button>
+            <LoginForm
+              data={this.state.inputList}
+              Buttontext={this.state.buttonText}
+              errMessageList={this.state.errMessageList}
+            ></LoginForm>
           </div>
         </Wrapper>
       </div>

@@ -1,15 +1,16 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
-// import ErrorMessage from "../../conponents/SignIn/ErrorMessage";
+import DoneButton from "./DuneButton";
+import ErrorMessage from "./ErrorMessage";
 
-class InputBox extends Component {
+class LoginForm extends Component {
   render() {
     var data = this.props.data;
     var i = 0;
     var inputList = [];
 
-    const InputBox = styled.input`
+    const LoginForm = styled.input`
       margin: 10px auto;
       display: block;
       box-sizing: border-box;
@@ -37,19 +38,28 @@ class InputBox extends Component {
       inputList.push(
         <InputLebel>
           {data[i].label}
-          <InputBox
+          <LoginForm
             type={data[i].kind}
             name={data[i].kind}
             placeholder={data[i].placeholder}
           />
-          {/* <ErrorMessage></ErrorMessage> */}
+          <ErrorMessage
+            errMessageList={this.props.errMessageList}
+          ></ErrorMessage>
         </InputLebel>
       );
       i++;
     }
 
-    return <div>{inputList}</div>;
+    return (
+      <div>
+        <form action="#">
+          {inputList}
+          <DoneButton Buttontext={this.props.Buttontext.text}></DoneButton>
+        </form>
+      </div>
+    );
   }
 }
 
-export default InputBox;
+export default LoginForm;

@@ -2,9 +2,9 @@ import React from "react";
 import { Component } from "react";
 import "../SignIn/loginContainer.css";
 import HeaderBox from "../../conponents/HeaderBox/headerBox";
-import InputBox from "../../conponents/SignIn/InputBox";
-import ErrorMessage from "../../conponents/SignIn/ErrorMessage";
-import Button from "../../conponents/SignIn/Button";
+import SignUpFrom from "../../conponents/SignUp/SignUpFrom";
+// import ErrorMessage from "../../conponents/SignIn/ErrorMessage";
+// import EuneButton from "../../conponents/SignIn/DuneButton";
 import MainLogo from "../../conponents/SignIn/MainLogo";
 import styled from "styled-components";
 
@@ -37,29 +37,18 @@ class SignUpContainer extends Component {
         },
       ],
 
-      buttonList: [
-        {
-          text: "예약주인",
-        },
-        {
-          text: "개인",
-        },
-        {
-          text: "회원가입 완료",
-        },
-      ],
-
       errMessageList: [
         {
           message: "",
         },
         {
-          message: "아이디를 다시 입력하세요",
-        },
-        {
-          message: "비밀번호를 다시 입력하세요.",
+          message: "비밀번호가 일치하지 않습니다.",
         },
       ],
+
+      buttonText: {
+        text: "회원가입 완료",
+      },
     };
   }
   //아이디
@@ -78,7 +67,7 @@ class SignUpContainer extends Component {
   render() {
     const Wrapper = styled.div`
       margin: 0 auto;
-      height: 94.4vh;
+      // height: 94.4vh;
       width: 1040px;
       background-color: white;
 
@@ -94,10 +83,11 @@ class SignUpContainer extends Component {
         <Wrapper>
           <div>
             <MainLogo></MainLogo>
-            <InputBox data={this.state.inputList}></InputBox>
-            <ErrorMessage data={this.state.errMessageList[1]}></ErrorMessage>
-            <Button>숙박 주인</Button>
-            <Button>개인</Button>
+            <SignUpFrom
+              data={this.state.inputList}
+              Buttontext={this.state.buttonText}
+              errMessageList={this.state.errMessageList}
+            ></SignUpFrom>
           </div>
         </Wrapper>
       </div>

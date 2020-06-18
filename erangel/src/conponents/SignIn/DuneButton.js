@@ -2,9 +2,9 @@ import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
 
-class Button extends Component {
+class EuneButton extends Component {
   render() {
-    const Button = styled.div`
+    const InputButton = styled.input`
       margin-top: 40px;
 
       width: 460px;
@@ -26,10 +26,10 @@ class Button extends Component {
     `;
     return (
       <>
-        <Button>{this.props.text.text}</Button>
+        <InputButton type="submit" value={this.props.Buttontext}></InputButton>
       </>
     );
   }
 }
 
-export default Button;
+export default EuneButton;
