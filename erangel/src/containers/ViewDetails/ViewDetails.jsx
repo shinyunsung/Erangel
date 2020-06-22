@@ -1,9 +1,9 @@
 import React from "react";
 import { Component } from "react";
-import HeaderBox from "../../conponents/HeaderBox/headerBox";
+import HeaderBox from "../../compornents/HeaderBox/headerBox";
 import styled from "styled-components";
 
-class ViewDetailsContainer extends Component {
+class ViewDetails extends Component {
   constructor(props) {
     super(props);
 
@@ -32,11 +32,11 @@ class ViewDetailsContainer extends Component {
       <div>
         <HeaderBox></HeaderBox>
         <Container>
-          <Wrapper>dks</Wrapper>
+          <Wrapper>dsf</Wrapper>
         </Container>
       </div>
     );
   }
 }
 
-export default ViewDetailsContainer;
+export default ViewDetails;
