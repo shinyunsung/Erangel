@@ -11,7 +11,6 @@ class loginContainer extends Component {
     super(props);
 
     this.state = {
-      // login: { id: "", pw: "", isLogin: null },
       inputList: [
         {
           kind: "id",
@@ -25,28 +24,19 @@ class loginContainer extends Component {
         },
       ],
 
-      errMessageList: [
-        {
-          message: "",
-        },
-        {
-          message: "아이디를 다시 입력하세요",
-        },
-        {
-          message: "비밀번호를 다시 입력하세요.",
-        },
-      ],
-
-      buttonText: { text: "로그인" },
+      // errMessageList: [
+      //   {
+      //     message: "",
+      //   },
+      //   {
+      //     message: "아이디를 다시 입력하세요",
+      //   },
+      //   {
+      //     message: "비밀번호를 다시 입력하세요.",
+      //   },
+      // ],
     };
   }
-  handleIDERROR = () => {
-    this.props.iderror();
-  };
-
-  handlePwError = () => {
-    this.props.decrement();
-  };
 
   render() {
     const Wrapper = styled.div`

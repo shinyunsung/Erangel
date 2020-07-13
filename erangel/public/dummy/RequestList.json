@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "booking_date": "2020-04-28",
+    "organization": "파리투나잇",
+    "room": "피콜로 방",
+    "checkin": "2020-05-15",
+    "checkout": "2020-05-18",
+    "people": 5
+  },
+  {
+    "id": 2,
+    "booking_date": "2020-04-30",
+    "organization": "반짝반짝눈이부셔",
+    "room": "중 방",
+    "checkin": "2020-05-15",
+    "checkout": "2020-05-18",
+    "people": 8
+  }
+]

@@ -1,40 +1,89 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
-import DoneButton from "../SignIn/DuneButton";
-import ErrorMessage from "../SignIn/ErrorMessage";
+// import DoneButton from "../SignIn/DuneButton";
+// import ErrorMessage from "../SignIn/ErrorMessage";
+import axios from "axios";
+import "../../conponents/SignIn/style.css";
 
 class SignUpFrom extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: "",
+      password: "",
+      email: "",
+      class: "guest",
+    };
+
+    this.onClickButton = this.onClickButton.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleRadioButton = this.handleRadioButton.bind(this);
+  }
+
+  handleRadioButton = (e) => {
+    this.setState({
+      class: e.target.value,
+    });
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  onClickButton() {
+    const apiUrl = "/v1/signup";
+    axios
+      .post(apiUrl, null, {
+        params: {
+          id: this.state.id,
+          password: this.state.password,
+          email: this.state.email,
+          class: this.state.class,
+        },
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  // ConfirmPassword(){
+
+  // }
+
   render() {
     var data = this.props.data;
     var i = 0;
     var inputList = [];
 
-    const SignUpFrom = styled.input`
-      margin: 10px auto;
-      display: block;
-      box-sizing: border-box;
-      padding-left: 30px;
-      width: 460px;
-      height: 50px;
-      border-radius: 5px;
-      border: solid 1px #707070;
-      background-color: #ffffff;
+    // const SignUpInput = styled.input`
+    //   margin: 10px auto;
+    //   display: block;
+    //   box-sizing: border-box;
+    //   padding-left: 30px;
+    //   width: 460px;
+    //   height: 50px;
+    //   border-radius: 5px;
+    //   border: solid 1px #707070;
+    //   background-color: #ffffff;
 
-      ::placeholder {
-        font-family: NanumSquareR;
-        font-size: 14px;
-        color: #a0a0a0;
-      }
-    `;
+    //   ::placeholder {
+    //     font-family: NanumSquareR;
+    //     font-size: 14px;
+    //     color: #a0a0a0;
+    //   }
+    // `;
 
-    const InputLebel = styled.label`
-      margin: 0 20px;
+    // const InputLebel = styled.label`
+    //   margin: 0 20px;
 
-      font-family: NanumSquareL;
-      font-size: 17px;
-      color: #000000;
-    `;
+    //   font-family: NanumSquareL;
+    //   font-size: 17px;
+    //   color: #000000;
+    // `;
+
     const UserButton = styled.input`
       display: none;
       :checked + label {
@@ -45,6 +94,7 @@ class SignUpFrom extends Component {
     `;
 
     const Userlabel = styled.label`
+      margin-bottom: 20px;
       width: 216px;
       height: 80px;
       cursor: pointer;
@@ -57,19 +107,43 @@ class SignUpFrom extends Component {
       justify-content: center;
     `;
 
+    const InputButton = styled.input`
+      margin: 40px 0;
+
+      width: 460px;
+      height: 60px;
+      border-radius: 5px;
+      border: none;
+      background-color: #fab514;
+      color: #ffffff;
+      cursor: pointer;
+
+      font-family: NanumSquareL;
+      font-size: 17px;
+      font-weight: bold;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    `;
+
     while (i < data.length) {
       inputList.push(
-        <InputLebel>
+        <label className="InputLebel">
           {data[i].label}
-          <SignUpFrom
+          <input
             type={data[i].kind}
             name={data[i].kind}
             placeholder={data[i].placeholder}
-          />
-          <ErrorMessage
+            id={data[i].id}
+            onChange={this.handleChange}
+            className="LoginInput"
+          ></input>
+          {/* <ErrorMessage
             errMessageList={this.props.errMessageList}
-          ></ErrorMessage>
-        </InputLebel>
+          ></ErrorMessage> */}
+        </label>
       );
       i++;
     }
@@ -81,8 +155,9 @@ class SignUpFrom extends Component {
           <UserButton
             type="radio"
             name="userClassification"
-            value="host"
+            value="owner"
             id="host-button"
+            onClick={this.handleRadioButton}
           ></UserButton>
           <Userlabel class="button-label" for="host-button">
             숙박 주인
@@ -92,9 +167,15 @@ class SignUpFrom extends Component {
             name="userClassification"
             value="guest"
             id="guest-button"
+            onClick={this.handleRadioButton}
             checked
           ></UserButton>
-          <Userlabel class="button-label" for="guest-button">
+          <Userlabel
+            class="button-label"
+            for="guest-button"
+            style={{ marginLeft: "25px" }}
+            checked
+          >
             개인
           </Userlabel>
           <details>
@@ -109,7 +190,12 @@ class SignUpFrom extends Component {
           <lable>
             <input type="checkbox"></input>동의합니다.
           </lable>
-          <DoneButton Buttontext={this.props.Buttontext.text}></DoneButton>
+          {this.state.class}
+          <InputButton
+            type="submit"
+            value="회원가입 완료"
+            onClick={this.onClickButton}
+          ></InputButton>
         </form>
       </div>
     );

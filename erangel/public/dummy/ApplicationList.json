@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "booking_date": "2020-04-28",
+    "organization": "파리투나잇",
+    "checkin": "2020-05-15",
+    "checkout": "2020-05-18",
+    "people": 5,
+    "status": "ACCEPTED"
+  },
+  {
+    "id": 2,
+    "booking_date": "2020-04-30",
+    "organization": "반짝반짝눈이부셔",
+    "checkin": "2020-05-15",
+    "checkout": "2020-05-18",
+    "people": 8,
+    "status": "REJECTED"
+  },
+  {
+    "id": 3,
+    "booking_date": "2020-04-30",
+    "organization": "대마고 사감",
+    "checkin": "2020-05-15",
+    "checkout": "2020-05-18",
+    "people": 9,
+    "status": "WAITING"
+  }
+]

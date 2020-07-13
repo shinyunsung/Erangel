@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
 
-class EuneButton extends Component {
+class DuneButton extends Component {
   render() {
     const InputButton = styled.input`
       margin-top: 40px;
@@ -32,4 +32,4 @@ class EuneButton extends Component {
   }
 }
 
-export default EuneButton;
+export default DuneButton;
