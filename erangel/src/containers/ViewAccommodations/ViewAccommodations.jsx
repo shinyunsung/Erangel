@@ -6,6 +6,8 @@ import axios from "axios";
 import "../ViewDetails/View.css";
 import MainImage from "../../assets/public/background.png";
 import RoomList from "./RoomList";
+import location from "../../assets/public/location.png";
+import coin from "../../assets/public/coin.png";
 
 class ViewAccommodations extends Component {
   constructor(props) {
@@ -36,30 +38,6 @@ class ViewAccommodations extends Component {
         console.log(error);
       });
   }
-
-  // handleChange = (e) => {
-  //   this.setState({
-  //     [e.target.id]: e.target.value,
-  //   });
-  // };
-
-  // onClickButton() {
-  //   const apiUrl = "/v1/booking/:id";
-  //   axios
-  //     .post(apiUrl, null, {
-  //       params: {
-  //         organization: this.state.,
-  //         people: ,
-  //         phone:,
-  //         checkin: ,
-  //         checkout: ,
-  //         room : ,
-  //       },
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
 
   render() {
     const Wrapper = styled.div`
@@ -102,7 +80,7 @@ class ViewAccommodations extends Component {
     `;
 
     const MiniTitle = styled.div`
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
       padding: 0px 7.5px;
       display: inline-block;
       font-family: NanumSquare;
@@ -149,17 +127,34 @@ class ViewAccommodations extends Component {
             </Left>
             <Right>
               <Title>{this.state.name}</Title>
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <img src={coin} alt="머니"></img>
                 <MiniTitle>가격 : 최소 </MiniTitle>
                 <span>{this.state.min_cost}원</span>
                 <MiniTitle>~ 최대</MiniTitle>
                 <span>{this.state.max_cost}원</span>
               </div>
-              <MiniTitle>주소 : </MiniTitle>
-              <span>{this.state.address}</span>
-              <div style={{ height: "180px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <img src={location} alt="위치"></img>
+                <MiniTitle>주소 : </MiniTitle>
+                <span>{this.state.address}</span>
+              </div>
+              <div style={{ height: "150px" }}>
                 <MiniTitle
                   style={{
+                    marginBottom: "10px",
                     borderBottom: "solid 2px #545454",
                   }}
                 >
@@ -175,7 +170,9 @@ class ViewAccommodations extends Component {
 
           <Paragraph>
             <Detail>
-              <MiniTitle style={{ color: "black" }}>상세 정보</MiniTitle>
+              <MiniTitle style={{ color: "black", marginBottom: "20px" }}>
+                상세 정보
+              </MiniTitle>
               <div>{this.state.detail}</div>
             </Detail>
           </Paragraph>

@@ -1,7 +1,8 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
-import RoomImg from "../../assets/public/background.png";
+// import RoomImg from "../../assets/public/background.png";
+import coin from "../../assets/public/coin.png";
 
 class RoomList extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class ItemInfo extends React.Component {
     const MiddleLine = styled.div`
       display: inline-flex;
       align-items: center;
-      height: 140px;
+      height: 120px;
     `;
 
     const LastLine = styled.div`
@@ -94,7 +95,7 @@ class ItemInfo extends React.Component {
     `;
     return (
       <Item>
-        <Picture src={RoomImg} alt="." />
+        <Picture src="http://placehold.it/220x180" alt="." />
         <div style={{ width: "700px" }}>
           <FirstLine>
             <RoomName>{this.props.room.name}</RoomName>
@@ -104,7 +105,16 @@ class ItemInfo extends React.Component {
             </Personnel>
           </FirstLine>
           <MiddleLine>{this.props.room.explanation}</MiddleLine>
-          <LastLine>{this.props.room.cost} 원</LastLine>
+          <LastLine>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              <img src={coin} alt="머니"></img> {this.props.room.cost} 원
+            </div>
+          </LastLine>
         </div>
       </Item>
     );
